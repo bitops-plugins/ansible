@@ -15,7 +15,7 @@ echo "Installing ansible via pip3 "
 # sudo pip install setuptools --no-use-wheel --upgrade
 # echo "Installing required python modules."
 # sudo pip install paramiko pyyaml jinja2 markupsafe
-sudo pip3 install ansible
+pip3 install ansible
 
 # if ! command -v ansible >/dev/null; then
 #         echo "Installing Ansible dependencies and Git."
