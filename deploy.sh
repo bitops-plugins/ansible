@@ -10,12 +10,6 @@ export BITOPS_CONFIG_SCHEMA="$BITOPS_PLUGIN_DIR/bitops.schema.yaml'"
 export SCRIPTS_DIR="$BITOPS_SCRIPTS_DIR"
 export PLUGIN_DIR="$BITOPS_OPSREPO_ENVIRONMENT_DIR"
 
-printenv
-
-alias pip=pip3
-alias python=python3
-
-
 
 echo "Running Ansible Playbooks..."
 
