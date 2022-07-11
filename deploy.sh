@@ -10,6 +10,8 @@ export BITOPS_CONFIG_SCHEMA="$BITOPS_PLUGIN_DIR/bitops.schema.yaml'"
 export SCRIPTS_DIR="$BITOPS_SCRIPTS_DIR"
 export PLUGIN_DIR="$BITOPS_OPSREPO_ENVIRONMENT_DIR"
 
+printenv
+
 echo "Running Ansible Playbooks..."
 
 if [ ! -d "$ANSIBLE_ROOT" ]; then
