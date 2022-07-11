@@ -35,10 +35,11 @@ cd $ANSIBLE_ROOT
 # echo "BITOPS_SCHEMA_ENV_FILE: $(cat $BITOPS_SCHEMA_ENV_FILE)"
 # source "$BITOPS_SCHEMA_ENV_FILE"
 
-bash $SCRIPTS_DIR/plugins/ansible/validate_env.sh
+
+bash $SCRIPTS_DIR/plugins/ansible/scripts/validate_env.sh
 
 
 echo "Running Ansible Playbooks"
-bash -x $SCRIPTS_DIR/plugins/ansible/ansible_install_playbooks.sh "$BITOPS_CONFIG_COMMAND"
+bash -x $SCRIPTS_DIR/plugins/ansible/scripts/ansible_install_playbooks.sh "$BITOPS_CONFIG_COMMAND"
 
 # bash $SCRIPTS_DIR/deploy/after-deploy.sh "$ANSIBLE_ROOT"
