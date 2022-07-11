@@ -15,6 +15,8 @@ printenv
 alias pip=pip3
 alias python=python3
 
+
+
 echo "Running Ansible Playbooks..."
 
 if [ ! -d "$ANSIBLE_ROOT" ]; then

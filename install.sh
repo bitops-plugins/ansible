@@ -9,4 +9,8 @@ echo ""
 
 echo "Installing ansible"
 
-apk add ansible
+# apk add ansible
+
+pip3 install ansible
+
+ansible --version | grep "python version"
