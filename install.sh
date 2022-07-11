@@ -26,6 +26,10 @@ echo "===> Install Ansible ..."
 pip install ansible==2.7.8
 pip install ansible-lint==4.1.0
 
+echo "===> Install Boto Libs ..."
+pip install --upgrade boto3
+pip install --upgrade botocore
+
 echo "===> Install other handy tools ..."
 pip install --upgrade pycrypto pywinrm
 apk --update add sshpass openssh-client rsync
