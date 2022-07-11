@@ -5,8 +5,9 @@ set -x
 export ANSIBLE_ROOT="$BITOPS_ENVROOT/ansible" 
 export ANSIBLE_BITOPS_CONFIG="$ANSIBLE_ROOT/bitops.config.yaml" 
 export BITOPS_SCHEMA_ENV_FILE="$ANSIBLE_ROOT/ENV_FILE"
-export BITOPS_CONFIG_SCHEMA="$BITOPS_PLUGINS_DIR/ansible/bitops.schema.yaml"
+export BITOPS_CONFIG_SCHEMA="$BITOPS_PLUGIN_DIR/bitops.schema.yaml'"
 export SCRIPTS_DIR="$BITOPS_SCRIPTS_DIR"
+export PLUGIN_DIR="$BITOPS_OPSREPO_ENVIRONMENT_DIR"
 
 echo "Running Ansible Playbooks..."
 
