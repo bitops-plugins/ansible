@@ -2,7 +2,7 @@
 set -e
 
 ANSIBLE_ARGS=$1
-PLUGIN_DIR="$ENVROOT/ansible"
+PLUGIN_DIR="$BITOPS_OPSREPO_ENVIRONMENT_DIR"
 
 echo "Running ansible_install_playbook.sh for $PLUGIN_DIR"
 
