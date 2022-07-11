@@ -7,8 +7,6 @@ echo "It should be used to install any dependencies required to actually run you
 echo "BitOps uses alpine linux as its base, so you'll want to use apk commands (Alpine Package Keeper)"
 echo ""
 
-echo "Installing ansible"
-
 echo "===> Install Python3 ..."
 
 apk add --no-cache python3 python3-dev
