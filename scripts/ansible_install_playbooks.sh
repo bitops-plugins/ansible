@@ -8,5 +8,5 @@ echo "Running ansible_install_playbook.sh for $PLUGIN_DIR with args $ANSIBLE_ARG
 
 for playbook in $(ls $PLUGIN_DIR/*[^bitops.config].yaml || ls $PLUGIN_DIR/*[^bitops.config].yml); do
     echo "Executing playbook: $playbook"
-    ansible-playbook $playbook $ANSIBLE_ARGS
+    ansible-playbook $playbook $ANSIBLE_ARGS -e 'ansible_python_interpreter=/usr/bin/python3'
 done
