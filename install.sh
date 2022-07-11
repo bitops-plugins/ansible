@@ -15,6 +15,8 @@ python3 -m pip install --user pipx
 python3 -m pipx ensurepath
 
 which pipx
+pipx --version
+
 pipx install ansible-base
 
 ansible --version | grep "python version"
