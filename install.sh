@@ -9,17 +9,35 @@ echo ""
 
 echo "Installing ansible"
 
-apk add ansible
+echo "===> Install Python3 ..."
 
-python3 -m pip install --user pipx
-python3 -m pipx ensurepath
+apk add --no-cache python3 python3-dev
+python3 -m ensurepip
+rm -r /usr/lib/python*/ensurepip
+pip3 install --upgrade pip setuptools
 
-which pipx
-pipx --version
+if [ ! -e /usr/bin/pip ]; then ln -s pip3 /usr/bin/pip ; fi
+if [[ ! -e /usr/bin/python ]]; then ln -sf /usr/bin/python3 /usr/bin/python; fi
 
-pipx install ansible-base
+rm -r /root/.cache
+echo "===> Base install ..."
+apk --update add sudo bash git openssl ca-certificates py3-cffi
+apk --update add --virtual build-dependencies libffi-dev openssl-dev build-base
 
-ansible --version | grep "python version"
+echo "===> Install Ansible ..."
+pip install ansible==2.7.8
+pip install ansible-lint==4.1.0
 
-which python3
-which pip3
+echo "===> Install other handy tools ..."
+pip install --upgrade pycrypto pywinrm
+apk --update add sshpass openssh-client rsync
+
+echo "===> Removing package list ..."
+apk del build-dependencies
+rm -rf /var/cache/apk/*
+
+echo "===> Adding hosts for convenience ..."
+mkdir -p /etc/ansible
+echo 'localhost' > /etc/ansible/hosts
+
+ansible-playbook --version
