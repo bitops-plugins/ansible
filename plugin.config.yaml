@@ -1,0 +1,10 @@
+plugin:
+  install: 
+    language: bash
+    install_script: install.sh
+
+  deployment:
+    language: bash
+    deployment_script: deploy.sh
+    core_schema_parsing: true
+    life_cycle_scripts: true
