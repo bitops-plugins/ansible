@@ -7,35 +7,38 @@ ansible:
         flush-cache:
           type: string
           parameter: flush-cache
-          export_env: BITOS_ANSIBLE_FLUSH_CACHE
+          export_env: ANSIBLE_FLUSH_CACHE
         force-handlers:
           type: string
           parameter: force-handlers
-          export_env: BITOPS_ANSIBLE_FORCE_HANDLERS
+          export_env: ANSIBLE_FORCE_HANDLERS
         skip-tags:
           type: string
           parameter: skip-tags
-          export_env: BITOPS_ANSIBLE_SKIP_TAGS
+          export_env: ANSIBLE_SKIP_TAGS
         forks:
           type: string
           parameter: forks
-          export_env: BITOPS_ANSIBLE_FORKS
+          export_env: ANSIBLE_FORKS
         inventory:
           type: string
           parameter: inventory
-          export_env: BITOPS_ANSIBLE_INVENTORY
+          export_env: ANSIBLE_INVENTORY
         tags:
           type: string
           parameter: tags
-          export_env: BITOPS_ANSIBLE_TAGS
+          export_env: ANSIBLE_TAGS
         extra-vars:
           type: string
           parameter: extra-vars
-          export_env: BITOPS_ANSIBLE_EXTRA_VARS
+          export_env: ANSIBLE_EXTRA_VARS
+        main-script:
+          type: string
+          export_env: ANSIBLE_MAIN_SCRIPT
     options:
       type: object
       properties:
         dryrun:
           type: boolean
-          export_env: BITOPS_ANSIBLE_DRYRUN
+          export_env: ANSIBLE_DRYRUN
           default: false
