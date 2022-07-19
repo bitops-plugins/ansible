@@ -38,6 +38,11 @@ cd $ANSIBLE_ROOT
 # source "$BITOPS_SCHEMA_ENV_FILE"
 
 
+# Check if the BITOPS_ANSIBLE_INVENTORY value is set
+if [ -n "$BITOPS_ANSIBLE_INVENTORY" ]; then
+  BITOPS_CONFIG_COMMAND="$BITOPS_CONFIG_COMMAND --inventory-file=$BITOPS_ANSIBLE_INVENTORY"
+fi
+
 bash $SCRIPTS_DIR/plugins/ansible/scripts/validate_env.sh
 
 
