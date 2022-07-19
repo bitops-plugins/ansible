@@ -8,6 +8,7 @@ echo "Running ansible_install_playbook.sh for $PLUGIN_DIR with args $ANSIBLE_ARG
 
 PLAYBOOK="$PLUGIN_DIR/$BITOPS_MAIN_SCRIPT"
 
+echo "Running playbook. [ansible-playbook $PLAYBOOK $ANSIBLE_ARGS]"
 ansible-playbook $PLAYBOOK $ANSIBLE_ARGS
 
 
