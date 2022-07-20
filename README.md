@@ -52,7 +52,11 @@ ansible:
     verbosity: 4
 ```
 
-## CLI Configuration
+## CLI and options configuration of Ansible ``bitops.schema.yaml``
+
+### Ansible BitOps Schema
+
+[bitops.schema.yaml](https://github.com/bitops-plugins/ansible/blob/main/bitops.schema.yaml)
 
 -------------------
 ### extra-vars
