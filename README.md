@@ -99,7 +99,7 @@ Specify inventory host path or comma separated host list.
 * **BitOps Property:** `main-playbook`
 * **Environment Variable:** `BITOPS_ANSIBLE_MAIN_SCRIPT`
 
-Specify number of parallel processes to use (default=5).
+Specify which playbook to run ansible-playbook with
 
 -------------------
 ### skip-tags
