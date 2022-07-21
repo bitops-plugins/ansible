@@ -43,6 +43,7 @@ ansible:
     force-handlers: true
     forks: 20
     inventory: beta
+    main-playbook: main-playbook.yaml
     skip-tags: ignore-this-tag
     tags: run-this-tag
     vault-id: [dev@dev-passwordfile, prod@prod-passwordfile]
@@ -92,6 +93,13 @@ Specify number of parallel processes to use (default=5).
 * **Environment Variable:** `BITOPS_ANSIBLE_INVENTORY`
 
 Specify inventory host path or comma separated host list.
+
+-------------------
+### main-plabook
+* **BitOps Property:** `main-playbook`
+* **Environment Variable:** `BITOPS_ANSIBLE_MAIN_SCRIPT`
+
+Specify number of parallel processes to use (default=5).
 
 -------------------
 ### skip-tags
