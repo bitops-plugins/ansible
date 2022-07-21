@@ -32,7 +32,7 @@ ansible:
           type: string
           parameter: extra-vars
           export_env: ANSIBLE_EXTRA_VARS
-        main-script:
+        main-playbook:
           type: string
           export_env: ANSIBLE_MAIN_SCRIPT
           required: True
