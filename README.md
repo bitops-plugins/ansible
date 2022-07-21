@@ -107,21 +107,28 @@ Only run plays and tasks whose tags do not match these values.
 
 Only run plays and tasks tagged with these values.
 
+-------------------
+### main-script
+* **BitOps Property:** `main-script`
+* **Environment Variable:** `BITOPS_ANSIBLE_MAIN_SCRIPT`
+* **required:** `"True"`
+
+Pass the main playbook yaml filename that manages playbook orchestration. This config is a required parameter. 
 
 -------------------
-### vault-id
+<!-- ### vault-id
 * **BitOps Property:** `vault-id`
 * **Environment Variable:** `BITOPS_ANSIBLE_VAULT_ID`
 * **type:** `list`
 
-Specify Ansible vault-id `[dev@dev-passwordfile]` or multiple `[dev@dev-passwordfile, prod@prod-passwordfile]` or password client script `[dev@my-vault-password-client.py]`. Cannot be used with `@prompt` for equivalent `--ask-vault-pass` functionality
+Specify Ansible vault-id `[dev@dev-passwordfile]` or multiple `[dev@dev-passwordfile, prod@prod-passwordfile]` or password client script `[dev@my-vault-password-client.py]`. Cannot be used with `@prompt` for equivalent `--ask-vault-pass` functionality -->
 
 -------------------
-### vault-password-file
+<!-- ### vault-password-file
 * **BitOps Property:** `vault-password-file`
 * **Environment Variable:** `BITOPS_ANSIBLE_VAULT_PASSWORD_FILE`
 
-Specify Ansible vault password file for decryption.
+Specify Ansible vault password file for decryption. -->
 
 ## Options Configuration
 
