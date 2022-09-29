@@ -42,4 +42,5 @@ echo "===> Adding hosts for convenience ..."
 mkdir -p /etc/ansible
 echo 'localhost' > /etc/ansible/hosts
 
+# Verify the Ansible installation
 ansible-playbook --version
