@@ -23,8 +23,8 @@ apk --update add sudo bash git openssl ca-certificates py3-cffi
 apk --update add --virtual build-dependencies libffi-dev openssl-dev build-base
 
 echo "===> Install Ansible ..."
-pip install ansible==2.7.8
-pip install ansible-lint==4.1.0
+pip install ansible
+pip install ansible-lint
 
 echo "===> Install Boto Libs ..."
 pip install --upgrade boto3
