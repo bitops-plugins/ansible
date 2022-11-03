@@ -43,3 +43,7 @@ ansible:
           type: boolean
           export_env: ANSIBLE_DRYRUN
           default: False
+        skip-deploy:
+          type: boolean
+          parameter: skip-deploy
+          export_env: ANSIBLE_SKIP_DEPLOY
