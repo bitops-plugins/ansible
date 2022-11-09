@@ -133,7 +133,7 @@ Will run `--list-tasks` but won't actually execute playbook(s)
 
 ### skip-deploy
 * **BitOps Property:** `skip-deploy`
-* **Environment Variable:** `CFN_SKIP_DEPLOY`
+* **Environment Variable:** `ANSIBLE_SKIP_DEPLOY`
 * **default:** `none`
 * **Required:** `false`
 * **Description:** If set to true, regardless of the stack-action, deployment actions will be skipped.
