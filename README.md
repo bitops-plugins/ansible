@@ -154,5 +154,5 @@ Although not captured in `bitops.config.yml`, the following environment variable
 Before Ansible playbook execution, BitOps will look for an `extra_env` file containing additional environment parameters (`FOO=val1`) in the Ansible plugin directory. If found, the values will be exported to the BitOps environment.
 
 -------------------
-### SKIP_DEPLOY_ANSIBLE
+### ANSIBLE_SKIP_DEPLOY
 Will skill all ansible executions. This superseeds all other configuration.

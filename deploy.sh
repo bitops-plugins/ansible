@@ -10,7 +10,8 @@ export BITOPS_CONFIG_SCHEMA="$BITOPS_PLUGIN_DIR/bitops.schema.yaml'"
 export SCRIPTS_DIR="$BITOPS_SCRIPTS_DIR"
 export PLUGIN_DIR="$BITOPS_OPSREPO_ENVIRONMENT_DIR"
 
-if [ "$ANSIBLE_SKIP_DEPLOY" == "true" ]; then
+SANITIZED_ANSIBLE_SKIP_DEPLOY=$(echo "$ANSIBLE_SKIP_DEPLOY" | tr '[:upper:]' '[:lower:]')
+if [ "$SANITIZED_ANSIBLE_SKIP_DEPLOY" == "true" ]; then
   echo "ANSIBLE_SKIP_DEPLOY is set.  Skipping."
   exit 0
 fi
