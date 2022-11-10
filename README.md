@@ -135,7 +135,6 @@ Will run `--list-tasks` but won't actually execute playbook(s)
 * **BitOps Property:** `skip-deploy`
 * **Environment Variable:** `ANSIBLE_SKIP_DEPLOY`
 * **default:** `""`
-* **Required:** `false`
 * **Description:** If set to true, regardless of the stack-action, deployment actions will be skipped.
 
 -------------------
