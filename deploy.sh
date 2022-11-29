@@ -34,23 +34,13 @@ fi
 echo "cd Ansible Root: $ANSIBLE_ROOT"
 cd $ANSIBLE_ROOT
 
-# bash $SCRIPTS_DIR/deploy/before-deploy.sh "$ANSIBLE_ROOT"
-
-# export BITOPS_CONFIG_COMMAND="$(ENV_FILE="$BITOPS_SCHEMA_ENV_FILE" DEBUG="" bash $SCRIPTS_DIR/bitops-config/convert-schema.sh $BITOPS_CONFIG_SCHEMA $ANSIBLE_BITOPS_CONFIG)"
-# echo "BITOPS_CONFIG_COMMAND: $BITOPS_CONFIG_COMMAND"
-# echo "BITOPS_SCHEMA_ENV_FILE: $(cat $BITOPS_SCHEMA_ENV_FILE)"
-# source "$BITOPS_SCHEMA_ENV_FILE"
-
-
 # Check if the BITOPS_ANSIBLE_INVENTORY value is set
 if [ -n "$BITOPS_ANSIBLE_INVENTORY" ]; then
   BITOPS_CONFIG_COMMAND="$BITOPS_CONFIG_COMMAND --inventory-file=$BITOPS_ANSIBLE_INVENTORY"
 fi
 
-bash $SCRIPTS_DIR/plugins/ansible/scripts/validate_env.sh
+bash $BITOPS_PLUGINS_DIR/ansible/scripts/validate_env.sh
 
 
 echo "Running Ansible Playbooks"
-bash -x $SCRIPTS_DIR/plugins/ansible/scripts/ansible_install_playbooks.sh "$BITOPS_CONFIG_COMMAND"
-
-# bash $SCRIPTS_DIR/deploy/after-deploy.sh "$ANSIBLE_ROOT"
+bash -x $BITOPS_PLUGINS_DIR/ansible/scripts/ansible_install_playbooks.sh "$BITOPS_CONFIG_COMMAND"
