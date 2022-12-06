@@ -26,7 +26,7 @@ ansible:
     force-handlers: true
     forks: 20
     inventory: beta
-    main-playbook: main-playbook.yaml
+    main-playbook: playbook.yaml
     skip-tags: ignore-this-tag
     tags: run-this-tag
     vault-id: [dev@dev-passwordfile, prod@prod-passwordfile]
@@ -81,6 +81,8 @@ Specify inventory host path or comma separated host list.
 ### main-plabook
 * **BitOps Property:** `main-playbook`
 * **Environment Variable:** `BITOPS_ANSIBLE_MAIN_SCRIPT`
+* **Required:** `"True"`
+* **Default:** `playbook.yaml`
 
 Specify which playbook to run ansible-playbook with
 
@@ -97,14 +99,6 @@ Only run plays and tasks whose tags do not match these values.
 * **Environment Variable:** `BITOPS_ANSIBLE_TAGS`
 
 Only run plays and tasks tagged with these values.
-
--------------------
-### main-script
-* **BitOps Property:** `main-script`
-* **Environment Variable:** `BITOPS_ANSIBLE_MAIN_SCRIPT`
-* **required:** `"True"`
-
-Pass the main playbook yaml filename that manages playbook orchestration. This config is a required parameter. 
 
 -------------------
 <!-- ### vault-id
