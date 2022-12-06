@@ -36,6 +36,7 @@ ansible:
           type: string
           export_env: ANSIBLE_MAIN_SCRIPT
           required: True
+          default: playbook.yaml
     options:
       type: object
       properties:
