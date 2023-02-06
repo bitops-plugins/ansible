@@ -123,7 +123,7 @@ Specify Ansible vault password file for decryption. -->
 * **Environment Variable:** `BITOPS_ANSIBLE_DRYRUN`
 * **default:** `false`
 
-Will run `--list-tasks` but won't actually execute playbook(s)
+Will run `--list-tasks` and adds `--check` option
 
 ### skip-deploy
 * **BitOps Property:** `skip-deploy`
