@@ -39,8 +39,6 @@ if [ -n "$BITOPS_ANSIBLE_INVENTORY" ]; then
   BITOPS_CONFIG_COMMAND="$BITOPS_CONFIG_COMMAND --inventory-file=$BITOPS_ANSIBLE_INVENTORY"
 fi
 
-bash $BITOPS_INSTALLED_PLUGIN_DIR/scripts/validate_env.sh
-
 
 echo "Running Ansible Playbooks"
 bash -x $BITOPS_INSTALLED_PLUGIN_DIR/scripts/ansible_install_playbooks.sh "$BITOPS_CONFIG_COMMAND"
