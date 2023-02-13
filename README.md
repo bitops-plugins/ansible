@@ -61,4 +61,4 @@ Options configurations is used to export variables without using the CLI generat
 | **Parameter** | **Environment Variable** | **Type** | **Required** | **Default** | **Description** | 
 | :--: | :--: | :--: | :--: | :--: | :--: |  
 | `skip-deploy` | `ANSIBLE_SKIP_DEPLOY`      | _boolean_ | _no_ |  | If set to "true", regardless of the stack-action, deployment actions will be skipped. | 
-| `verbosity`   | `BITOPS_ANSIBLE_VERBOSITY` | _string_  | _no_ |  | Equivalent to adding `-verbose` or repeating `-v` flags. Will override `[default]` `verbosity=` setting in ansible.cfg. Acceptable values `0\|1\|2\|3\|4`. |
+| `verbosity`   | `BITOPS_ANSIBLE_VERBOSITY` | _integer_ | _no_ |  | Equivalent to adding `-verbose` or repeating `-v` flags. Will override `[default]` `verbosity=` setting in ansible.cfg. Acceptable values `0\|1\|2\|3\|4`. |
