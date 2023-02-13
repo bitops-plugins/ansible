@@ -29,10 +29,8 @@ ansible:
     main-playbook: playbook.yaml
     skip-tags: ignore-this-tag
     tags: run-this-tag
-    vault-id: [dev@dev-passwordfile, prod@prod-passwordfile]
-    vault-password-file: $TEMPDIR/secrets/password_file
-  options:
     dryrun: false
+  options:
     verbosity: 4
 ```
 
