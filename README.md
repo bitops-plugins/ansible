@@ -21,24 +21,25 @@ This plugin will let BitOps to automatically deploy ``ansible`` scripts on any p
 ```
 ansible:
   cli:
+    inventory: beta
+    main-playbook: playbook.yaml
     extra-vars: "@extra-vars.json"
     flush-cache: true
     force-handlers: true
     forks: 20
-    inventory: beta
-    main-playbook: playbook.yaml
     skip-tags: ignore-this-tag
-    tags: run-this-tag
+    tags: run-with-this-tag
     dryrun: false
   options:
     verbosity: 4
 ```
 
-## CLI and options configuration of Ansible ``bitops.schema.yaml``
-
 ### Ansible BitOps Schema
 
 [bitops.schema.yaml](https://github.com/bitops-plugins/ansible/blob/main/bitops.schema.yaml)
+
+## CLI configuration
+CLI configuration is used to pass in CLI parameters to the ansible-playbook command.
 
 -------------------
 ### extra-vars
@@ -79,7 +80,7 @@ Specify inventory host path or comma separated host list.
 ### main-plabook
 * **BitOps Property:** `main-playbook`
 * **Environment Variable:** `BITOPS_ANSIBLE_MAIN_SCRIPT`
-* **Required:** `"True"`
+* **Required:** `true`
 * **Default:** `playbook.yaml`
 
 Specify which playbook to run ansible-playbook with
@@ -99,51 +100,28 @@ Only run plays and tasks whose tags do not match these values.
 Only run plays and tasks tagged with these values.
 
 -------------------
-<!-- ### vault-id
-* **BitOps Property:** `vault-id`
-* **Environment Variable:** `BITOPS_ANSIBLE_VAULT_ID`
-* **type:** `list`
-
-Specify Ansible vault-id `[dev@dev-passwordfile]` or multiple `[dev@dev-passwordfile, prod@prod-passwordfile]` or password client script `[dev@my-vault-password-client.py]`. Cannot be used with `@prompt` for equivalent `--ask-vault-pass` functionality -->
-
--------------------
-<!-- ### vault-password-file
-* **BitOps Property:** `vault-password-file`
-* **Environment Variable:** `BITOPS_ANSIBLE_VAULT_PASSWORD_FILE`
-
-Specify Ansible vault password file for decryption. -->
-
-## Options Configuration
-
--------------------
 ### dryrun
 * **BitOps Property:** `dryrun`
 * **Environment Variable:** `BITOPS_ANSIBLE_DRYRUN`
-* **default:** `false`
 
-Will run `--list-tasks` but won't actually execute playbook(s)
+Don't make any changes; instead, try to predict some of the changes that may occur.
 
+-------------------
+
+
+## Options Configuration
+Options configurations is used to export variables without using the CLI generation or for any advanced logic that is not supported by the Ansible CLI.
+
+-------------------
 ### skip-deploy
 * **BitOps Property:** `skip-deploy`
 * **Environment Variable:** `ANSIBLE_SKIP_DEPLOY`
-* **default:** `""`
-* **Description:** If set to true, regardless of the stack-action, deployment actions will be skipped.
+
+If set to "true", regardless of the stack-action, deployment actions will be skipped.
 
 -------------------
-### verbose
+### verbosity
 * **BitOps Property:** `verbosity`
-* **Environment Variable:** `ANSIBLE_VERBOSITY`
-* **default:** `not set`
+* **Environment Variable:** `BITOPS_ANSIBLE_VERBOSITY`
 
-Acceptable values `0|1|2|3|4`. Equivalent to adding `-verbose` or repeating `-v` flags. Will override a pre-existing `ANSIBLE_VERBOSITY` environmental variable or `[default]` `verbosity=` setting in ansible.cfg.
-
-## Additional Environment Variable Configuration
-Although not captured in `bitops.config.yml`, the following environment variables can be set to further customize behaviour.
-
--------------------
-### EXTRA_ENV
-Before Ansible playbook execution, BitOps will look for an `extra_env` file containing additional environment parameters (`FOO=val1`) in the Ansible plugin directory. If found, the values will be exported to the BitOps environment.
-
--------------------
-### ANSIBLE_SKIP_DEPLOY
-Will skill all ansible executions. This superseeds all other configuration.
+Equivalent to adding `-verbose` or repeating `-v` flags. Will override `[default]` `verbosity=` setting in ansible.cfg. Acceptable values `0|1|2|3|4`.
