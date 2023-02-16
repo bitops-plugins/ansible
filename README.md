@@ -43,7 +43,7 @@ CLI configuration is used to pass in CLI parameters to the ansible-playbook comm
 
 | **Parameter** | **Environment Variable** | **Type** | **Required** | **Default** | **Description** |
 | :--: | :--: | :--: | :--: | :--: | :--: |
-| `main-playbook`  | `BITOPS_ANSIBLE_MAIN_SCRIPT`    | _string_  | _yes_ | `playbook.yaml` | Specify which playbook to run ansible-playbook with |
+| `main-playbook`  | `BITOPS_ANSIBLE_MAIN_PLAYBOOK`    | _string_  | _yes_ | `playbook.yaml` | Specify which playbook to run ansible-playbook with |
 | `extra-vars`     | `BITOPS_ANSIBLE_EXTRA_VARS`     | _string_  | _no_  |  | Add additional ansible playbook parameters directly or load via JSON/YAML file. |
 | `flush-cache`    | `BITOPS_ANSIBLE_FLUSH_CACHE`    | _boolean_ | _no_  |  | Clear the fact cache for every host in inventory. |
 | `force-handlers` | `BITOPS_ANSIBLE_FORCE_HANDLERS` | _boolean_ | _no_  |  | Clear the fact cache for every host in inventory. |
