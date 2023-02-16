@@ -54,12 +54,10 @@ ansible:
       type: object
       properties:
         skip-deploy:
-          parameter: skip-deploy
           type: boolean
           import_env: BITOPS_ANSIBLE_SKIP_DEPLOY
           export_env: BITOPS_ANSIBLE_SKIP_DEPLOY
         verbosity:
-          parameter: verbosity
           type: integer
           import_env: BITOPS_ANSIBLE_VERBOSITY
           export_env: ANSIBLE_VERBOSITY
