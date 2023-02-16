@@ -7,57 +7,38 @@ ansible:
         flush-cache:
           type: boolean
           parameter: flush-cache
-          import_env: BITOPS_ANSIBLE_FLUSH_CACHE
         force-handlers:
           type: boolean
           parameter: force-handlers
-          import_env: BITOPS_ANSIBLE_FORCE_HANDLERS
-          # https://github.com/ansible/ansible/blob/f841c2803a1e36bb6f392c466d36b669f9243464/lib/ansible/config/base.yml#L612-L623
-          #export_env: ANSIBLE_FORCE_HANDLERS
         skip-tags:
           type: string
           parameter: skip-tags
-          import_env: BITOPS_ANSIBLE_SKIP_TAGS
-          # https://github.com/ansible/ansible/blob/f841c2803a1e36bb6f392c466d36b669f9243464/lib/ansible/config/base.yml#L1939-L1947
-          #export_env: ANSIBLE_SKIP_TAGS
         forks:
           type: integer
           parameter: forks
-          import_env: BITOPS_ANSIBLE_FORKS
-          # https://github.com/ansible/ansible/blob/f841c2803a1e36bb6f392c466d36b669f9243464/lib/ansible/config/base.yml#L624-L631
-          #export_env: ANSIBLE_FORKS
         inventory:
           type: string
           parameter: inventory
-          import_env: BITOPS_ANSIBLE_INVENTORY
-          # https://github.com/ansible/ansible/blob/f841c2803a1e36bb6f392c466d36b669f9243464/lib/ansible/config/base.yml#L707-L718
-          #export_env: ANSIBLE_INVENTORY
         tags:
           type: string
           parameter: tags
-          import_env: BITOPS_ANSIBLE_TAGS
         extra-vars:
           type: string
           parameter: extra-vars
-          import_env: BITOPS_ANSIBLE_EXTRA_VARS
         main-playbook:
           type: string
           required: True
           default: playbook.yaml
-          import_env: BITOPS_ANSIBLE_MAIN_PLAYBOOK
         dryrun:
           parameter: check
           type: boolean
           description: Don't make any changes; instead, try to predict some of the changes that may occur
-          import_env: BITOPS_ANSIBLE_DRYRUN
     options:
       type: object
       properties:
         skip-deploy:
           type: boolean
-          import_env: BITOPS_ANSIBLE_SKIP_DEPLOY
           export_env: BITOPS_ANSIBLE_SKIP_DEPLOY
         verbosity:
           type: integer
-          import_env: BITOPS_ANSIBLE_VERBOSITY
           export_env: ANSIBLE_VERBOSITY
