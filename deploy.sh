@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 
 # set -e: Exit immediately if a command exits with a non-zero status
-# set -u: Treat unset variables as an error when substituting
 # pipefail: If any command in a pipeline fails, that return code will be used 
-set -eu -o pipefail
+set -e -o pipefail
 
 if [ "$BITOPS_ANSIBLE_SKIP_DEPLOY" == "true" ]; then
   echo "BITOPS_ANSIBLE_SKIP_DEPLOY is set. Skipping."

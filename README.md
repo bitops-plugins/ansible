@@ -21,12 +21,12 @@ This plugin will let BitOps to automatically deploy ``ansible`` scripts on any p
 ```
 ansible:
   cli:
-    inventory: beta
     main-playbook: playbook.yaml
     extra-vars: "@extra-vars.json"
     flush-cache: true
     force-handlers: true
     forks: 20
+    inventory: beta
     skip-tags: ignore-this-tag
     tags: run-with-this-tag
     dryrun: false
