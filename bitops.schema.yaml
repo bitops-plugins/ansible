@@ -41,4 +41,5 @@ ansible:
           export_env: BITOPS_ANSIBLE_SKIP_DEPLOY
         verbosity:
           type: integer
+          # https://github.com/ansible/ansible/blob/f841c2803a1e36bb6f392c466d36b669f9243464/lib/ansible/config/base.yml#L1185-L1192
           export_env: ANSIBLE_VERBOSITY

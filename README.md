@@ -56,7 +56,7 @@ CLI configuration is used to pass in CLI parameters to the ansible-playbook comm
 -------------------
 
 ## Options Configuration
-Options configurations is used to export variables without using the CLI generation or for any advanced logic that is not supported by the Ansible CLI.
+Options configurations are used to export variables without using the CLI generation or for any advanced logic that is not supported by the Ansible CLI.
 
 | **Parameter** | **Environment Variable** | **Type** | **Required** | **Default** | **Description** | 
 | :--: | :--: | :--: | :--: | :--: | :--: |  
