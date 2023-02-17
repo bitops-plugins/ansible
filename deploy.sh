@@ -1,46 +1,21 @@
 #!/usr/bin/env bash
 
-set -x
+# set -e: Exit immediately if a command exits with a non-zero status
+# set -u: Treat unset variables as an error when substituting
+# pipefail: If any command in a pipeline fails, that return code will be used 
+set -eu -o pipefail
 
-export ENVIRONMENT="$BITOPS_ENVIRONMENT"
-export ANSIBLE_ROOT="$BITOPS_OPSREPO_ENVIRONMENT_DIR" 
-export ANSIBLE_BITOPS_CONFIG="$BITOPS_OPSREPO_ENVIRONMENT_DIR/bitops.config.yaml" 
-export BITOPS_SCHEMA_ENV_FILE="$BITOPS_OPSREPO_ENVIRONMENT_DIR/ENV_FILE"
-export BITOPS_CONFIG_SCHEMA="$BITOPS_INSTALLED_PLUGIN_DIR/bitops.schema.yaml'"
-export SCRIPTS_DIR="$BITOPS_SCRIPTS_DIR"
-export PLUGIN_DIR="$BITOPS_OPSREPO_ENVIRONMENT_DIR"
-
-if [ "$ANSIBLE_SKIP_DEPLOY" == "true" ]; then
-  echo "ANSIBLE_SKIP_DEPLOY is set.  Skipping."
+if [ "$BITOPS_ANSIBLE_SKIP_DEPLOY" == "true" ]; then
+  echo "BITOPS_ANSIBLE_SKIP_DEPLOY is set. Skipping."
   exit 0
 fi
 
-echo "Running Ansible Playbooks..."
-
-if [ ! -d "$ANSIBLE_ROOT" ]; then
-  echo "No ansible directory.  Skipping."
+if [ ! -d "$BITOPS_OPSREPO_ENVIRONMENT_DIR" ]; then
+  echo "No ansible directory exists in Operations Repository. Skipping."
   exit 0
-else
-  printf "Deploying ansible... ${NC}"
 fi
 
+cd ${BITOPS_OPSREPO_ENVIRONMENT_DIR}
 
-if [ -f "$ANSIBLE_BITOPS_CONFIG" ]; then
-  echo "Ansible - Found BitOps config"
-else
-  echo "Ansible - No BitOps config"
-fi
-
-echo "cd Ansible Root: $ANSIBLE_ROOT"
-cd $ANSIBLE_ROOT
-
-# Check if the BITOPS_ANSIBLE_INVENTORY value is set
-if [ -n "$BITOPS_ANSIBLE_INVENTORY" ]; then
-  BITOPS_CONFIG_COMMAND="$BITOPS_CONFIG_COMMAND --inventory-file=$BITOPS_ANSIBLE_INVENTORY"
-fi
-
-bash $BITOPS_INSTALLED_PLUGIN_DIR/scripts/validate_env.sh
-
-
-echo "Running Ansible Playbooks"
-bash -x $BITOPS_INSTALLED_PLUGIN_DIR/scripts/ansible_install_playbooks.sh "$BITOPS_CONFIG_COMMAND"
+echo "Running: [ansible-playbook ${BITOPS_ANSIBLE_CLI}]"
+ansible-playbook ${BITOPS_ANSIBLE_CLI}
